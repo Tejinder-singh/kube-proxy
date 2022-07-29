@@ -7,9 +7,13 @@ pipeline {
     }
 */
     environment {
-        registry = "imranvisualpath/vproappdock"
-        registryCredential = 'dockerhub'
+       
+        registry = "18.207.97.112:8085/http:/my-docker-repo"
+        registryCredential = "nexusadmin" 
+       
     }
+
+
 
     stages{
 
@@ -62,7 +66,7 @@ pipeline {
             script {
               docker.withRegistry( '', registryCredential ) {
                 dockerImage.push("$BUILD_NUMBER")
-                dockerImage.push('latest')
+                
               }
             }
           }
