@@ -8,7 +8,7 @@ pipeline {
 */
     environment {
        
-        registry = "44.197.180.149:8085/http:/my-docker-repo"
+        registry = "44.197.180.149:8085/my-docker-repo"
         registryCredential = "admin"
        
     }
@@ -54,12 +54,12 @@ pipeline {
 
 
         stage('Building image') {
-            steps {
-               script {	    
-                sh 'docker build -t tejinder/vprofile .'
-		 }
+            steps{
+              script {
+                dockerImage = docker.build registry + ":$BUILD_NUMBER"
               }
-             }
+            }
+        }
 	    
 	    stage('CODE ANALYSIS with SONARQUBE') {
 
