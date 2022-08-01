@@ -54,12 +54,10 @@ pipeline {
 
 
         stage('Building image') {
-            steps{
-              script {
-                dockerImage = docker.build registry + ":$BUILD_NUMBER"
+            steps {
+                docker -t Build Tejinder /var/lib/jenkins/workspace/vprofile
               }
-            }
-        }
+             }
 	    
 	    stage('CODE ANALYSIS with SONARQUBE') {
 
