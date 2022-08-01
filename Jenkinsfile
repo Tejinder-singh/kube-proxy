@@ -8,8 +8,8 @@ pipeline {
 */
     environment {
        
-        registry = "18.207.97.112:8085/http:/my-docker-repo"
-        registryCredential = "nexusadmin" 
+        registry = "44.197.180.149:8085/http:/my-docker-repo"
+        registryCredential = "admin"
        
     }
 
