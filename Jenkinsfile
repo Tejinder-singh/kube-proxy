@@ -8,7 +8,7 @@ pipeline {
 */
     environment {
        
-        registry = "44.197.180.149:8085/my-docker-repo"
+        registry = "http://44.197.180.149:8085"
         registryCredential = "nexus3"
 	imagename = "my-docker-repo"    
        
@@ -87,7 +87,7 @@ pipeline {
         stage('Deploy Image') {
           steps{
             script {
-              docker.withRegistry( 'http://'+registryCredential ) {
+              docker.withRegistry( registry,registryCredential ) {
                 dockerImage.push("$BUILD_NUMBER")
                 
               }
