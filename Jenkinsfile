@@ -56,7 +56,7 @@ pipeline {
         stage('Building image') {
             steps {
                script {	    
-                sh 'docker build -t Tejinder/vprofile .'
+                sh 'docker build -t tejinder/vprofile .'
 		 }
               }
              }
