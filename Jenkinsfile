@@ -55,7 +55,9 @@ pipeline {
 
         stage('Building image') {
             steps {
+               script {	    
                 docker -t Build Tejinder /var/lib/jenkins/workspace/vprofile
+		 }
               }
              }
 	    
