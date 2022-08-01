@@ -9,7 +9,7 @@ pipeline {
     environment {
        
         registry = "44.197.180.149:8085/my-docker-repo"
-        registryCredential = "admin"
+        registryCredential = "nexus3"
        
     }
 
