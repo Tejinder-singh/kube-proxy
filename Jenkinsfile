@@ -10,6 +10,7 @@ pipeline {
        
         registry = "44.197.180.149:8085/my-docker-repo"
         registryCredential = "nexus3"
+	imagename = "my-docker-repo"    
        
     }
 
@@ -78,7 +79,7 @@ pipeline {
 	    stage('Building image') {
             steps{
               script {
-                dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                dockerImage = docker.build imagename + ":$BUILD_NUMBER"
               }
             }
         }
