@@ -53,7 +53,7 @@ pipeline {
             }
         }
 
-   
+   /*
 	    stage('CODE ANALYSIS with SONARQUBE') {
 
             environment {
@@ -75,6 +75,8 @@ pipeline {
                 
             }
         }
+	
+	*/
 	    
 	    stage('Building image') {
             steps{
