@@ -30,7 +30,7 @@ pipeline {
             }
         }
 
-        stage('UNIT TEST'){
+      /*  stage('UNIT TEST'){
             steps {
                 sh 'mvn test'
             }
@@ -53,7 +53,7 @@ pipeline {
             }
         }
 
-   /*
+   
 	    stage('CODE ANALYSIS with SONARQUBE') {
 
             environment {
