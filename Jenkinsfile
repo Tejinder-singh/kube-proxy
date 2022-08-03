@@ -18,8 +18,9 @@ pipeline {
 
 
     stages{
+   /*	    
 
-     /*   stage('BUILD'){
+      stage('BUILD'){
             steps {
                 sh 'mvn clean install -DskipTests'
             }
@@ -96,7 +97,7 @@ pipeline {
             }
           }
         }
-	   */
+*/
 	    stage('K8s Deploy') {
                 steps {
 		     withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', serverUrl: '') {
