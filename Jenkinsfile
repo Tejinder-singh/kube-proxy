@@ -96,6 +96,15 @@ pipeline {
             }
           }
         }
+	    stage('K8s Deploy') {
+                steps {
+		     withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', serverUrl: '') {
+                        sh "kubectl apply -f "  
+                     }
+		  }
+	        }
+		    
+	    
 
    /*   stage('Kubernetes Deploy') {
 	  agent { label 'KOPS' }
