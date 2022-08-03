@@ -82,7 +82,7 @@ pipeline {
 	    stage('Building image') {
             steps{
               script {
-                dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                dockerImage = docker.build registry
               }
             }
         }
@@ -91,7 +91,7 @@ pipeline {
           steps{
             script {
 		    sh "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 442376613065.dkr.ecr.us-east-1.amazonaws.com"
-		    sh "docker push 442376613065.dkr.ecr.us-east-1.amazonaws.com/my-kube:$BUILD_NUMBER"
+		    sh "docker push 442376613065.dkr.ecr.us-east-1.amazonaws.com/my-kube:latest
                     
             }
           }
