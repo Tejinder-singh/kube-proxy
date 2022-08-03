@@ -8,7 +8,7 @@ pipeline {
 */
     environment {
        
-        registry = "http://44.197.180.149:8085"
+        registry1 = "http://44.197.180.149:8085"
         registryCredential = "nexus3"
 	imagename = "my-docker-repo"    
 	registry = "442376613065.dkr.ecr.us-east-1.amazonaws.com/my-kube"
