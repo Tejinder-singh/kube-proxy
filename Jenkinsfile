@@ -88,7 +88,7 @@ pipeline {
 */
 	    stage('K8s Deploy') {
                 steps {
-		     withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'K8S', namespace: '', serverUrl: '') {
+		     kubernetesDeploy configs: '', kubeConfig: [path: ''], kubeconfigId: 'K8S', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://'] {
 		      sh "/home/ec2-user/bin/kubectl apply -f eks-deploy-k8s.yaml"  			                           
 		  }
 	        }
